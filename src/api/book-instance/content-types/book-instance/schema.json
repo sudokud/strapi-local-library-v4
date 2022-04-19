@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "book_instances",
+  "info": {
+    "singularName": "book-instance",
+    "pluralName": "book-instances",
+    "displayName": "Book-instance"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "book": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::book.book",
+      "inversedBy": "book_instances"
+    },
+    "imprint": {
+      "type": "string"
+    },
+    "due_back": {
+      "type": "datetime"
+    },
+    "Status": {
+      "type": "enumeration",
+      "enum": [
+        "Available",
+        "Maintenance",
+        "Loaned",
+        "Reserved"
+      ],
+      "default": "Available"
+    }
+  }
+}
